@@ -7,7 +7,7 @@ import { API } from './types'
 
 const { version } = require('../../package.json')
 
-export const stylis = new Stylis()
+export const stylis = new (Stylis as any)()
 
 class EmbedAPI {
   static stylis = stylis
