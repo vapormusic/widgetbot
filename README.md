@@ -4,6 +4,35 @@
 
 [![Banner](./.github/banner.png)](https://widgetbot.io)
 
+## Building Embed & Server
+
+If you're a macOS or Linux user you can build all packages at once like this:
+
+```bash
+yarn build
+```
+
+If you want to build them manually or use Windows:
+
+```bash
+yarn
+yarn workspace @widgetbot/embed-api build
+yarn workspace @widgetbot/react-embed build
+yarn workspace @widgetbot/html-embed build  # you can skip this one if you don't need it
+yarn workspace embed build
+yarn workspace @widgetbot/crate build
+yarn workspace server build
+```
+
+Running the servers:
+
+```bash
+yarn workspace server start  # starts the server
+yarn workspace embed start   # starts the embed webserver
+```
+
+## Packages
+
 | @widgetbot/                                                    | Description                         |                                                      |                                                  |
 | -------------------------------------------------------------- | ----------------------------------- | ---------------------------------------------------- | ------------------------------------------------ |
 | [embed](https://widgetbot.io)                                  | ReactJS widget client               | [Docs](https://docs.widgetbot.io/embed/)             | [/packages/embed/](/packages/embed/)             |

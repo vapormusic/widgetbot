@@ -5,8 +5,10 @@
     "packages/*"
   ],
   "scripts": {
+    "build": "./build-all.sh",
     "pull": "git stash && git pull && yarn && yarn build",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "test": "yarn build"
   },
   "dependencies": {
     "react": "~16.4.2",
