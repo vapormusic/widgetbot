@@ -1,37 +1,32 @@
 {
-  "extends": "../scripts/tsconfig.json",
   "compilerOptions": {
     "outDir": "build/dist",
     "module": "esnext",
-    "target": "esnext",
-    "lib": ["es2016", "es6", "dom", "esnext.asynciterable"],
-    "allowSyntheticDefaultImports": true,
-    "jsx": "preserve",
+    "target": "es5",
+    "lib": ["es6", "dom", "esnext.asynciterable"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
     "rootDir": "src",
+    "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@lib/*": ["src/lib/*"],
-      "@constants/*": ["src/constants/*"],
-      "@constants": ["src/constants/index"],
-      "@ui/*": ["src/ui/*"],
-      "@views/*": ["src/views/*"],
-      "@queries/*": ["src/queries/*"],
-      "@services/*": ["src/services/*"],
-      "@generated": ["src/__generated__/index"],
-      "@generated/*": ["src/__generated__/*"],
-      "@store": ["src/state/index"],
-      "@store/*": ["src/state/*"],
-      "@utils/*": ["src/utils/*"],
-      "notify": ["src/app/notify.tsx"],
+      "logger": ["src/modules/logger.ts"],
+      "raven": ["src/modules/sentry.ts"],
       "locales": ["src/app/locales"],
       "locales/*": ["src/app/locales/*"],
-      "embed-api": ["src/lib/embed-api"]
-    },
-    "plugins": [
-      {
-        "name": "ts-graphql-plugin"
-      }
-    ]
+      "notify": ["src/app/notify.tsx"],
+      "styled-elements/*": ["src/modules/styled-elements/*"],
+      "typed-emotion": ["src/controllers/emotion/index.ts"],
+      "queries": ["src/store/actions/graphql/queries.ts"],
+      "markdown": ["src/components/Markdown/index.ts"],
+      "markdown/*": ["src/components/Markdown/*"],
+      "socket-io": ["src/controllers/socket-io"],
+      "fluent": ["src/controllers/cerebral/fluent.ts"],
+      "embed-api": ["src/controllers/embed-api"],
+      "emoji": ["src/components/Messages/Message/Markdown/elements/emoji.ts"]
+    }
   },
   "exclude": [
     "node_modules",

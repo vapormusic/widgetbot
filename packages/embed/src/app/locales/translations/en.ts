@@ -1,5 +1,5 @@
 const translation = {
-  'message.join_message': `{name} has joined. Stay a while and listen!`,
+  'message.join_message': `Hey! Listen! {name} has joined!`,
   'message.channel': `Message {channel}`,
   'header.join': `Join`
 }

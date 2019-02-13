@@ -1,22 +1,22 @@
-import 'babel-polyfill'
+import './app/res/index.css'
 
-import client from '@lib/apollo'
-import { connect } from '@lib/sentry'
+import { Container } from '@cerebral/react'
+import { connect } from 'raven'
 import * as React from 'react'
-import { ApolloProvider } from 'react-apollo'
 import * as ReactDOM from 'react-dom'
-import { BrowserRouter } from 'react-router-dom'
 
 import App from './app'
+import ThemeProvider from './app/ThemeProvider'
+import controller from './controllers/cerebral'
 import registerServiceWorker from './registerServiceWorker'
 
 // Render App
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <BrowserRouter basename="/channels">
+  <Container controller={controller}>
+    <ThemeProvider>
       <App />
-    </BrowserRouter>
-  </ApolloProvider>,
+    </ThemeProvider>
+  </Container>,
   document.getElementById('root')
 )
 

@@ -1,7 +1,0 @@
-query GuildInfo($guild: Snowflake!) {
-  guild(id: $guild) {
-    name
-    iconURL
-    memberCount
-  }
-}

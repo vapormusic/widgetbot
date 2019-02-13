@@ -1,6 +1,5 @@
-import autobind from 'autobind-decorator'
 import * as React from 'react'
-import N from 'react-notification-system'
+import * as N from 'react-notification-system'
 
 import { Notifications } from './elements'
 
@@ -34,7 +33,7 @@ export const addNotification = (
 }
 
 class Notify extends React.PureComponent {
-  private notifications: N.System
+  notifications: N.System
 
   render() {
     return (
@@ -50,10 +49,9 @@ class Notify extends React.PureComponent {
         this.addNotification(notification)
       }
     }
-    ref = this.addNotification
+    ref = this.addNotification.bind(this)
   }
 
-  @autobind
   addNotification(notification: N.Notification) {
     if (this.notifications) {
       this.notifications.addNotification({

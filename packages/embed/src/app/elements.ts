@@ -1,7 +1,4 @@
-import './res/globalStyles.css'
-import './res/globalStyles.ts'
-
-import styled, { injectGlobal, Theme } from '@lib/emotion'
+import styled, { injectGlobal, Theme } from 'typed-emotion'
 
 export const Notifications = styled('div')`
   button {
@@ -29,13 +26,9 @@ export const Notifications = styled('div')`
 `
 
 export namespace GlobalStyles {
-  let injected = false
   const CSS = document.createElement('style')
 
   export function inject(theme: Theme) {
-    if (injected) return update(theme)
-    injected = true
-
     injectGlobal`
       html, body, #root {
         position: relative;
@@ -64,7 +57,7 @@ export namespace GlobalStyles {
     document.body.appendChild(CSS)
   }
 
-  function update(theme: Theme) {
+  export function update(theme: Theme) {
     CSS.innerText = theme.css
 
     injectGlobal`
