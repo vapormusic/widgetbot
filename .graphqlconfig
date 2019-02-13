@@ -1,7 +1,7 @@
 {
   "projects": {
     "WidgetBot": {
-      "schemaPath": "schema.graphql",
+      "schemaPath": "packages/server/src/graphql/schema.gql",
       "includes": ["**/*.{ts,tsx}"],
       "extensions": {
         "endpoints": {
