@@ -30,10 +30,8 @@ class Embed extends React.PureComponent<StateProps> {
   componentDidMount() {
     const { interactive } = this.props
 
-    // Allow 5 seconds for the target page to load,
-    // before attempting to load the embed
     if (interactive) {
-      setTimeout(() => this.setState({ deferred: false }), 5000)
+      this.setState({ deferred: false })
     }
   }
 
