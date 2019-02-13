@@ -5,9 +5,9 @@
   "repository": "https://github.com/widgetbot-io/server.git",
   "author": "samdd <sam@samdd.me>",
   "scripts": {
-    "start": "webpack --colors --config ./scripts/webpack/development --display=minimal",
+    "start": "webpack-cli --colors --config ./scripts/webpack/development --display=minimal",
     "pull": "git stash && git pull && yarn && yarn build",
-    "build": "webpack --colors --config ./scripts/webpack/production --display=minimal",
+    "build": "webpack-cli --colors --config ./scripts/webpack/production --display=minimal",
     "test": "jest",
     "test:watch": "jest --watch",
     "doc": "typedoc --includeDeclarations --excludeExternals --externalPattern \"**/node_modules/!(@widgetbot)/**\" --ignoreCompilerErrors --out ./docs/ ./src",
@@ -94,7 +94,7 @@
     "typedoc": "~0.14.2",
     "typescript": "~3.3.3",
     "webpack": "~4.10.2",
-    "webpack-cli": "~3.0.1",
+    "webpack-cli": "~3.2.3",
     "webpack-node-externals": "~1.7.2"
   }
 }
