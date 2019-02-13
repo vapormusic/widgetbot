@@ -18,7 +18,7 @@ async function fetchChannel(
         'VIEW_CHANNEL',
         'READ_MESSAGE_HISTORY',
         ...(perms instanceof Array ? perms : [perms])
-      ] as Discord.PermissionResolvable)
+      ] as Discord.PermissionResolvable[])
     : null
 
   // Validate input

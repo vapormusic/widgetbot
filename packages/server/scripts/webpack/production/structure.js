@@ -33,7 +33,7 @@ module.exports = stats => {
     fs.readFileSync(path.join(root, './dist/widgetbot.js'))
   )
 
-  fs.writeFile(
+  fs.writeFileSync(
     path.join(root, './dist/widgetbot.min.js'),
     obfuscated.getObfuscatedCode()
   )
@@ -42,7 +42,7 @@ module.exports = stats => {
     if (err) throw err
 
     // Write the new package
-    fs.writeFile(
+    fs.writeFileSync(
       path.join(root, './dist/package.json'),
       JSON.stringify(newPackage, null, 2)
     )
@@ -53,7 +53,7 @@ module.exports = stats => {
       path.join(root, './dist/data/config.template.yml')
     )
 
-    fs.writeFile(
+    fs.writeFileSync(
       path.join(root, './dist/data/config.template.js'),
       `
 /**

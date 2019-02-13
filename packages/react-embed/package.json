@@ -18,6 +18,6 @@
   },
   "private": false,
   "dependencies": {
-    "@widgetbot/embed-api": "^1.1.2"
+    "@widgetbot/embed-api": "~1.1.2"
   }
 }
