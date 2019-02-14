@@ -1,12 +1,9 @@
 import Crate from '../../src'
 
 const crate = new Crate({
-  // server: '436136130035843082',
-  // channel: '436136130035843084',
-  // shard: 'http://localhost:3000',
-  shard: 'https://cl1.widgetbot.io',
-  server: '299881420891881473',
-  channel: '355719584830980096',
+  server: 'YOUR-SERVER-ID',
+  channel: 'YOUR-CHANNEL-ID',
+  shard: 'http://localhost:3000',
   // glyph: ['https://samdd.me/favicon.ico', '50%'],
   css: `
   &:not(.open) .button {

@@ -1,7 +1,8 @@
 /dist/**/*
 /data/**/*
 !/data/README.md
-!/data/config.template.yml
+!/data/config.base.yml
+!/data/config.example.yml
 
 /doc
 

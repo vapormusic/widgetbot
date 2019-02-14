@@ -1,10 +1,14 @@
 import config from 'config'
+import fs from 'fs'
 import graphqlHTTP from 'express-graphql'
+import path from 'path'
 import { buildSchema } from 'graphql'
 
 import root from '../graphql/root'
 
-const schema = buildSchema(require('../graphql/schema.gql'))
+const schema = buildSchema(
+  fs.readFileSync(path.join(__dirname, '../graphql/schema.gql'), 'utf8')
+)
 
 const controller = graphqlHTTP((req, res, params) => ({
   schema: schema,

@@ -13,13 +13,25 @@ Server for hosting Discord embeds.
 
 ## Setting up
 
-First of all rename `config.example.ts` to `config.ts`. Open it up in a text editor and replace the appropiate values.
+- copy `config.example.yml` to `config.yml`
+- edit the file as needed
 
-To start a development server, simple run the following:
+When you can't use `config.yml` (e.g. when using automatic deployments) then you can also set some settings through environment variables:
+
+```bash
+ADMIN_IDS=…          # comma-separated list of user IDs who are admins of the bot
+DISCORD_TOKEN=…      # your Discord Bot's Token
+JWT_SIGNATURE_KEY=…  # add long random string here for some encryption (KEEP IT SECRET!)
+LOG_CHANNEL_ID=…     # ID of the channel to send the server status messages to
+LOG_SERVER_ID=…      # ID of the server to send the server status messages to
+```
+
+## Starting
 
 ```bash
 # Install dependencies
 yarn
+
 # Start app
 yarn start
 ```

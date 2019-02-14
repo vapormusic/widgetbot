@@ -13,7 +13,7 @@ if (serveStatic) {
   app.use(express.static(configurator))
 } else {
   logger.warn(
-    `Couldn't find index.html, proxying from WidgetBot.io`,
+    `Couldn't find ${index}, proxying from WidgetBot.io`,
     meta('configurator')
   )
   app.use('/', (req, res) =>

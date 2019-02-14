@@ -1,25 +1,51 @@
-import is from '@sindresorhus/is'
+import extend from 'extend'
 import fs from 'fs'
 import yaml from 'node-yaml'
 import path from 'path'
-import { data } from 'paths'
+import * as paths from 'paths'
 
-import Config, { OptionalConfig } from '../types/Config'
+import Config from '../types/Config'
 
-const paths = {
-  yml: path.join(data, 'config.yml'),
-  js: path.join(data, 'config.js')
-}
-
-const js = fs.existsSync(paths.js) ? eval(`require(paths.js)`) : null
-const yml = fs.existsSync(paths.yml) ? yaml.readSync(paths.yml) : null
-
-const userConfig = (is.function_(js) ? js() : js) || yml
-
-export const defaultConfig: OptionalConfig = {
-  development: process.env.NODE_ENV === 'development'
-}
-
-const config = { ...defaultConfig, ...userConfig } as Config
+const config = extend(
+  true,
+  readConfigurationFile('config.base.yml'),
+  readConfigurationFile('config.yml'),
+  readConfigurationEnvironment()
+) as Config
 
 export default config
+
+function readConfigurationEnvironment(): object {
+  const env = process.env
+
+  return {
+    database: {
+      jwt_secret: env.JWT_SIGNATURE_KEY
+    },
+    development: env.NODE_ENV && env.NODE_ENV === 'development',
+    discord: {
+      token: env.DISCORD_TOKEN
+    },
+    events: {
+      logs: [env.LOG_SERVER_ID, env.LOG_CHANNEL_ID],
+      status: [env.LOG_SERVER_ID, env.LOG_CHANNEL_ID]
+    },
+    admins:
+      (env.ADMIN_ID && [env.ADMIN_ID]) ||
+      (env.ADMIN_IDS && env.ADMIN_IDS.split(',')),
+    express: {
+      port: env.PORT
+    }
+  }
+}
+
+function readConfigurationFile(fileName: string): object | null {
+  const filePath = path.join(paths.data, fileName)
+  if (!fs.existsSync(filePath)) {
+    console.log(`⚠️ Configuration file not found: ${filePath}`)
+    return null
+  }
+
+  console.log(`Loading configuration from ${filePath}…`)
+  return yaml.readSync(filePath) || null
+}
