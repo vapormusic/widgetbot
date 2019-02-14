@@ -10,7 +10,7 @@ database:
 discord:
   events: {}
   webhook: 'WidgetBot.io Chat'
-  statuses: {}
+  statuses: []
   admins: []
 
 express:
