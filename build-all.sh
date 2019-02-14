@@ -6,43 +6,43 @@ export YARN_PRODUCTION=false
 echo
 echo "↔ Installing dependencies…"
 echo
-yarn
+( set -x; yarn )
 
 echo
 echo
 echo "🔨 Building embed-api…"
 echo
-yarn workspace @widgetbot/embed-api build
+( set -x; yarn workspace @widgetbot/embed-api build)
 
 echo
 echo
 echo "🔨 Building react-embed…"
 echo
-yarn workspace @widgetbot/react-embed build
+( set -x; yarn workspace @widgetbot/react-embed build)
 
 echo
 echo
 echo "🔨 Building html-embed…"
 echo
-yarn workspace @widgetbot/html-embed build
+( set -x; yarn workspace @widgetbot/html-embed build)
 
 echo
 echo
 echo "🔨 Building embed…"
 echo
-yarn workspace embed build
+( set -x; yarn workspace embed build)
 
 echo
 echo
 echo "🔨 Building crate…"
 echo
-yarn workspace @widgetbot/crate build
+( set -x; yarn workspace @widgetbot/crate build)
 
 echo
 echo
 echo "🔨 Building server…"
 echo
-yarn workspace server build
+( set -x; yarn workspace server build)
 
 echo
 echo "--------------------------------------------------------------------------------"
