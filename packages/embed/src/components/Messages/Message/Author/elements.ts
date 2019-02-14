@@ -1,7 +1,7 @@
 import styled from 'typed-emotion'
 
 // Root
-export const Root = styled('span')`
+export const Root = styled.span`
   display: flex;
   height: 24px;
   line-height: 24px;
@@ -13,7 +13,7 @@ interface NameProps {
   color: string
 }
 
-export const Name = styled<NameProps, 'strong'>('strong')`
+export const Name = styled.strong<NameProps>`
   color: ${({ color }) => (color !== '#000000' ? color : null)};
   cursor: pointer;
   font-size: 16px;
@@ -31,7 +31,7 @@ export const Name = styled<NameProps, 'strong'>('strong')`
 `
 
 // Timestamp
-export const Time = styled('span')`
+export const Time = styled.span`
   color: ${({ theme }) => theme.colors._primary.fadeOut(0.8).toString()};
   font-size: 12px;
   font-weight: 400;

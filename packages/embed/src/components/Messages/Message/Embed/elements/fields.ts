@@ -1,17 +1,18 @@
-import styled, { css } from '../ThemeContext'
+import { css } from 'emotion'
+import styled from '../ThemeContext'
 
 interface Props {
   inline: boolean
 }
 
-export const Fields = styled('div')`
+export const Fields = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 4px;
 `
 
-export const Field = styled<Props, 'div'>('div')`
+export const Field = styled.div<Props>`
   flex: 0;
   /* padding-top: 10px; */
   min-width: 100%;
@@ -26,14 +27,14 @@ export const Field = styled<Props, 'div'>('div')`
       : null};
 `
 
-export const FieldName = styled('div')`
+export const FieldName = styled.div`
   font-size: 14px;
   margin-bottom: 4px;
   font-weight: 500;
   color: hsla(0, 0%, 100%, 1);
 `
 
-export const FieldValue = styled('div')`
+export const FieldValue = styled.div`
   font-size: 14px;
   font-weight: 400;
 `

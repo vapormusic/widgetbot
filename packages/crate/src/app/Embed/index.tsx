@@ -21,7 +21,7 @@ class Embed extends React.PureComponent<StateProps> {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.interactive && !this.props.interactive) {
+    if (nextProps.open && this.state.deferred) {
       // User toggled open embed
       this.setState({ deferred: false })
     }
@@ -30,8 +30,10 @@ class Embed extends React.PureComponent<StateProps> {
   componentDidMount() {
     const { interactive } = this.props
 
+    // Allow 5 seconds for the target page to load,
+    // before attempting to load the embed
     if (interactive) {
-      this.setState({ deferred: false })
+      setTimeout(() => this.setState({ deferred: false }), 5000)
     }
   }
 

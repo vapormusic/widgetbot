@@ -1,7 +1,7 @@
 import { Twemoji } from 'emoji'
 import styled from 'typed-emotion'
 
-export const Root = styled('div')`
+export const Root = styled.div`
   display: inline-block;
   background-color: ${({ theme }) =>
     theme.colors._primary.fadeOut(0.96).toString()};
@@ -24,7 +24,7 @@ export const Emoji = styled(Twemoji)`
   vertical-align: -0.4em;
 `
 
-export const Count = styled('span')`
+export const Count = styled.span`
   color: ${({ theme }) => theme.colors._primary.fadeOut(0.7).toString()};
   min-width: 9px;
   font-size: 0.875rem;

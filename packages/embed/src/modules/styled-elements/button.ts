@@ -1,5 +1,6 @@
+import { css } from 'emotion'
 import focusable from 'styled-elements/focusable'
-import styled, { css } from 'typed-emotion'
+import styled from 'typed-emotion'
 
 interface Props {
   variant?: 'large' | 'small' | 'mini'
@@ -9,7 +10,7 @@ interface Props {
 const darken = `inset 0 0 0 99999px rgba(0, 0, 0, 0.1)`
 const lighten = `inset 0 0 0 99999px rgba(255, 255, 255, 0.1)`
 
-const Button = styled<Props, 'button'>('button')`
+const Button = styled.button<Props>`
   position: relative;
   overflow: hidden;
   background-color: ${({ color, theme }) => color || theme.colors.accent};

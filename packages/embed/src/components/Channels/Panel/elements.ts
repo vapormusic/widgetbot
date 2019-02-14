@@ -1,6 +1,6 @@
 import styled from 'typed-emotion'
 
-export const Root = styled('footer')`
+export const Root = styled.footer`
   height: 40px;
   flex-shrink: 0;
   display: flex;
@@ -17,12 +17,12 @@ export const Root = styled('footer')`
     ${({ theme }) => theme.colors._background.darken(0.05).toString()};
 `
 
-export const Developers = styled('div')`
+export const Developers = styled.div`
   display: flex;
   flex-grow: 1;
 `
 
-export const Developer = styled('img')`
+export const Developer = styled.img`
   cursor: pointer;
   height: 20px;
   width: 20px;
@@ -37,7 +37,7 @@ export const Developer = styled('img')`
   }
 `
 
-export const Version = styled('a')`
+export const Version = styled.a`
   color: inherit;
   line-height: 20px;
   text-align: right;

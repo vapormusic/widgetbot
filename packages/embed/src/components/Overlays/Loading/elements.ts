@@ -1,4 +1,5 @@
-import styled, { keyframes } from 'typed-emotion'
+import { keyframes } from 'emotion'
+import styled from 'typed-emotion'
 
 const cube = keyframes`
   25% {
@@ -14,7 +15,7 @@ const cube = keyframes`
   }
 `
 
-export const Spinner = styled('div')`
+export const Spinner = styled.div`
   &::after,
   &::before {
     content: '';

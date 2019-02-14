@@ -1,11 +1,12 @@
+import { css } from 'emotion'
 import ExpandableImage from 'styled-elements/ExpandableImage'
 
-import styled, { css } from '../ThemeContext'
+import styled from '../ThemeContext'
 
 interface Props {
   rich?: boolean
 }
-export const Thumbnail = styled<Props, any>(ExpandableImage)`
+export const Thumbnail = styled(ExpandableImage)<Props>`
   border-radius: 3px;
   object-fit: contain;
   flex-shrink: 0;

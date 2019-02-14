@@ -1,11 +1,12 @@
+import { css } from 'emotion'
 import { ScrollOverlay } from 'styled-elements/scrollable'
-import styled, { css } from 'typed-emotion'
+import styled from 'typed-emotion'
 
 interface Props {
   visible: boolean
 }
 
-export const Root = styled<Props, 'div'>('div')`
+export const Root = styled.div<Props>`
   position: absolute;
   z-index: 9;
   background-color: ${({ theme }) =>

@@ -1,4 +1,5 @@
-import styled, { css } from 'typed-emotion'
+import { css } from 'emotion'
+import styled from 'typed-emotion'
 
 import { light } from './hljs'
 
@@ -18,7 +19,7 @@ interface Props {
   language?: string
 }
 
-export const Code = styled<Props, 'code'>('code')`
+export const Code = styled.code<Props>`
   background-color: rgba(0, 0, 0, 0.1) !important;
   font-family: ${fonts};
   font-size: 14px;

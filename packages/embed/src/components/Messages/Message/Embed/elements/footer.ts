@@ -1,8 +1,8 @@
-import styled, { css } from '../ThemeContext'
+import styled from '../ThemeContext'
 
-export const Footer = styled('div')``
+export const Footer = styled.div``
 
-export const FooterText = styled('span')`
+export const FooterText = styled.span`
   display: inline-block;
   font-weight: 500;
   font-size: 12px;
@@ -10,7 +10,7 @@ export const FooterText = styled('span')`
   letter-spacing: 0;
 `
 
-export const FooterIcon = styled('img')`
+export const FooterIcon = styled.img`
   margin-right: 10px;
   height: 18px;
   width: 18px;

@@ -1,9 +1,6 @@
-import styled, { ThemedReactEmotionInterface } from 'react-emotion'
-
+import styled, { CreateStyled } from '@emotion/styled'
 import * as Store from '../../store/types'
 import { ParsedUrl } from '../../types/url'
-
-export * from 'react-emotion'
 
 type Color = any
 
@@ -20,4 +17,4 @@ export interface Theme extends Store.Theme {
   url: ParsedUrl
 }
 
-export default styled as ThemedReactEmotionInterface<Theme>
+export default styled as CreateStyled<Theme>

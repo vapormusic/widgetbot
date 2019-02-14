@@ -56,7 +56,7 @@ export default connect()
               <Greeting>Pick a name to start chatting</Greeting>
               <Group label="name" onSubmit={this.signUp.bind(this)}>
                 <Input
-                  innerRef={ref => (this.nameField = ref)}
+                  ref={ref => (this.nameField = ref)}
                   autoFocus={true}
                   spellCheck={false}
                   minLength={2}

@@ -1,13 +1,13 @@
+import createCache from '@emotion/cache'
 import { API } from '@widgetbot/react-embed'
 import { cx } from 'emotion'
 import * as React from 'react'
 import { connect } from 'react-redux'
 import ShadowDOM from 'react-shadow'
-
 import { stylis } from '../api/embedAPI'
-import { createEmotion, Provider } from '../controllers/emotion'
 import { State } from '../types/store'
 import App from './app'
+import { CacheProvider } from '@emotion/core'
 
 export const APIContext = React.createContext(null)
 
@@ -23,7 +23,7 @@ interface StateProps {
 
 class Controller extends React.Component<StateProps & OwnProps> {
   state = {
-    emotion: null,
+    emotionCache: null,
     id: `crate-${Math.random()
       .toString(36)
       .substr(2, 9)}`
@@ -31,7 +31,9 @@ class Controller extends React.Component<StateProps & OwnProps> {
 
   registerEmotion = (styleInjection: HTMLDivElement) => {
     this.setState({
-      emotion: createEmotion(styleInjection)
+      emotionCache: createCache({
+        container: styleInjection
+      })
     })
   }
 
@@ -61,12 +63,12 @@ class Controller extends React.Component<StateProps & OwnProps> {
           <shadow-styles ref={this.registerEmotion}>
             <style>{styles}</style>
           </shadow-styles>
-          {this.state.emotion && (
-            <Provider value={this.state.emotion}>
+          {this.state.emotionCache && (
+            <CacheProvider value={this.state.emotionCache}>
               <APIContext.Provider value={onAPI}>
                 <App />
               </APIContext.Provider>
-            </Provider>
+            </CacheProvider>
           )}
         </div>
       </this.shadowDOM>

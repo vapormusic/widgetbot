@@ -6,6 +6,9 @@ import { Provider } from 'react-redux'
 import App from '../../app'
 import { Node } from './root'
 
+import { cache } from 'emotion'
+import { CacheProvider } from '@emotion/core'
+
 interface Props {
   onAPI: (api: API) => void
   node: Node
@@ -14,9 +17,11 @@ interface Props {
 
 const render = ({ node, store, ...props }: Props) => {
   ReactDOM.render(
-    <Provider store={store}>
-      <App {...props} />
-    </Provider>,
+    <CacheProvider value={cache}>
+      <Provider store={store}>
+        <App {...props} />
+      </Provider>
+    </CacheProvider>,
     node
   )
 

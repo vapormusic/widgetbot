@@ -1,10 +1,10 @@
 import styled from 'typed-emotion'
 
-export const Root = styled('div')`
+export const Root = styled.div`
   width: 100%;
 `
 
-export const Textarea = styled('textarea')`
+export const Textarea = styled.textarea`
   width: 100%;
   height: 100%;
   padding: 10px 16px;

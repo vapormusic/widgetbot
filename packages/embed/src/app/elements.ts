@@ -1,6 +1,7 @@
-import styled, { injectGlobal, Theme } from 'typed-emotion'
+import { injectGlobal } from 'emotion'
+import styled, { Theme } from 'typed-emotion'
 
-export const Notifications = styled('div')`
+export const Notifications = styled.div`
   button {
     cursor: pointer;
     outline: 0;

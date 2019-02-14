@@ -1,9 +1,10 @@
-import { css, Theme } from 'typed-emotion'
+import { css } from 'emotion'
+import { Theme } from 'typed-emotion'
 
-const focusable = ({ theme }: { theme: Theme }) => css`
+const focusable = props => css`
   &::after {
     content: '';
-    border: 2px solid ${theme.colors.accent};
+    border: 2px solid ${props.theme.colors.accent};
     position: absolute;
     width: calc(100% - 4px);
     height: calc(100% - 4px);

@@ -1,4 +1,5 @@
-import styled, { css } from 'typed-emotion'
+import { css } from 'emotion'
+import styled from 'typed-emotion'
 import EmojiParser from 'styled-elements/Emoji'
 
 interface Props {
@@ -24,7 +25,7 @@ const emoji = (enlarged: boolean) => css`
       `};
 `
 
-export const Emoji = styled<Props, 'img'>('img')`
+export const Emoji = styled.img<Props>`
   ${({ enlarged }) => emoji(enlarged)};
 `
 

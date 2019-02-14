@@ -1,6 +1,6 @@
 import styled from 'typed-emotion'
 
-export const Root = styled('header')`
+export const Root = styled.header`
   overflow: hidden;
   display: flex;
   flex-shrink: 0;
@@ -11,7 +11,7 @@ export const Root = styled('header')`
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 2px 0 rgba(0, 0, 0, 0.06);
 `
 
-export const Icon = styled('img')`
+export const Icon = styled.img`
   height: 26px;
   width: 26px;
   border-radius: 50%;
@@ -22,7 +22,7 @@ export const Icon = styled('img')`
   }
 `
 
-export const Name = styled('h1')`
+export const Name = styled.h1`
   font-size: 15px;
   font-weight: 600;
   margin: 0 15px;
@@ -32,7 +32,7 @@ export const Name = styled('h1')`
   flex-grow: 1;
 `
 
-export const Count = styled('div')`
+export const Count = styled.div`
   flex-shrink: 0;
   font-size: 10px;
   background: ${({ theme }) => theme.colors._accent.fadeOut(0.6).toString()};

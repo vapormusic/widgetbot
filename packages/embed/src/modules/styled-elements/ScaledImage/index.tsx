@@ -1,5 +1,5 @@
+import { css } from 'emotion'
 import * as React from 'react'
-import { css } from 'typed-emotion'
 import { Root } from './elements'
 
 interface Scaler {

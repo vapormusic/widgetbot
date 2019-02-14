@@ -1,12 +1,13 @@
+import { css } from 'emotion'
 import Button from 'styled-elements/button'
 
 import { Content } from '../elements'
-import styled, { css } from '../elements/ThemeContext'
+import styled from '../elements/ThemeContext'
 
 interface Props {
   loading: boolean
 }
-export const Root = styled<Props, any>(Content)`
+export const Root = styled(Content)<Props>`
   padding: 18px 40px;
   text-align: center;
   user-select: none;
@@ -22,14 +23,14 @@ export const Root = styled<Props, any>(Content)`
       : null};
 `
 
-export const Title = styled('h1')`
+export const Title = styled.h1`
   font-size: 26px;
   line-height: 32px;
   font-weight: 300;
   margin-bottom: 8px;
 `
 
-export const Greeting = styled('h2')`
+export const Greeting = styled.h2`
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -40,7 +41,7 @@ export const Greeting = styled('h2')`
 interface GroupProps {
   label: string
 }
-export const Group = styled<GroupProps, 'form'>('form')`
+export const Group = styled.form<GroupProps>`
   &::before {
     display: block;
     content: ${({ label }) => JSON.stringify(label)};
@@ -61,7 +62,7 @@ export const Group = styled<GroupProps, 'form'>('form')`
   }
 `
 
-export const Input = styled('input')`
+export const Input = styled.input`
   height: 40px;
   padding: 10px;
   border-radius: 3px;
@@ -82,14 +83,14 @@ export const Create = styled(Button)`
   margin: 20px 0 14px;
 `
 
-export const SSO = styled('div')`
+export const SSO = styled.div`
   font-size: 14px;
   color: ${({ theme }) => theme.colors._primary.fadeOut(0.8).toString()};
 
   text-align: left;
 `
 
-export const Discord = styled('button')`
+export const Discord = styled.button`
   font-size: 14px;
   display: inline-block;
   background: none;

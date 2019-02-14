@@ -5,7 +5,7 @@ interface Props {
   length: number
 }
 
-export const Description = styled('div')`
+export const Description = styled.div`
   padding: 5px 17px;
   font-size: 12px;
   text-transform: uppercase;
@@ -19,7 +19,7 @@ export const Description = styled('div')`
   }
 `
 
-export const Suggestions = styled<Props, any>(ScrollOverlay)`
+export const Suggestions = styled(ScrollOverlay)<Props>`
   position: absolute !important;
   left: 0;
   border-radius: 5px 5px 0 0;

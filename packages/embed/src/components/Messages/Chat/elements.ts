@@ -1,6 +1,7 @@
-import styled, { css } from 'typed-emotion'
+import { css } from 'emotion'
+import styled from 'typed-emotion'
 
-export const Root = styled('form')`
+export const Root = styled.form`
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -21,12 +22,12 @@ export const Root = styled('form')`
     `};
 `
 
-export const Typing = styled('div')``
+export const Typing = styled.div``
 
 interface FieldProps {
   rows: number
 }
-export const Field = styled<FieldProps, 'div'>('div')`
+export const Field = styled.div<FieldProps>`
   display: flex;
   border-radius: 5px;
   background-color: ${({ theme }) =>

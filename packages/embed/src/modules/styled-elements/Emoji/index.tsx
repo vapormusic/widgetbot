@@ -40,7 +40,7 @@ class Emoji extends React.PureComponent<Props> {
 
     const resolved = emoji(text, (code, string, key) => (
       <Emote
-        innerRef={this.handleErrors.bind(this)}
+        ref={this.handleErrors.bind(this)}
         src={`https://twitter.github.io/twemoji/2/svg/${code}.svg`}
         alt={string}
         className={cx('emoji', className)}

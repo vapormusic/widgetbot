@@ -1,6 +1,6 @@
-import styled, { css } from '../ThemeContext'
+import styled from '../ThemeContext'
 
-export const Description = styled('div')`
+export const Description = styled.div`
   margin-top: 4px;
 
   & * {

@@ -1,4 +1,4 @@
-import { css } from 'typed-emotion'
+import { css } from 'emotion'
 
 export const light = fontFamily =>
   css({
@@ -30,7 +30,7 @@ export const light = fontFamily =>
       fontStyle: 'italic'
     },
     '& .hljs-strong': {
-      fontWeight: '700'
+      fontWeight: 700
     },
     '& *': {
       fontFamily
@@ -67,7 +67,7 @@ export const dark = fontFamily =>
       fontStyle: 'italic'
     },
     '& .hljs-strong': {
-      fontWeight: '700'
+      fontWeight: 700
     },
     '& *': {
       fontFamily

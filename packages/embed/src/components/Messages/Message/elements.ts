@@ -1,7 +1,8 @@
-import styled, { css } from './ThemeContext'
+import { css } from 'emotion'
+import styled from './ThemeContext'
 
 // prettier-ignore
-export const Group = styled('div')`
+export const Group = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors._primary.fadeOut(0.96).toString()};
   box-sizing: border-box;
   display: -webkit-box;
@@ -32,7 +33,7 @@ export const Group = styled('div')`
 interface AvatarProps {
   url: string
 }
-export const Avatar = styled<AvatarProps, 'div'>('div')`
+export const Avatar = styled.div<AvatarProps>`
   flex-shrink: 0;
   cursor: pointer;
   background-image: url('${props => props.url}');
@@ -54,19 +55,19 @@ export const Avatar = styled<AvatarProps, 'div'>('div')`
         `}
 `
 
-export const Messages = styled('div')`
+export const Messages = styled.div`
   flex-grow: 1;
   margin-right: 20px;
 `
 
-export const Edited = styled('span')`
+export const Edited = styled.span`
   font-size: 0.625rem;
   line-height: 0.625rem;
   margin-left: 3px;
   opacity: 0.3;
 `
 
-export const JoinText = styled('span')`
+export const JoinText = styled.span`
   padding-left: 26px;
   background-repeat: no-repeat;
   background-position: left center;
@@ -75,14 +76,14 @@ export const JoinText = styled('span')`
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3e%3cg fill='none' fill-rule='evenodd'%3e%3cpath d='M18 0H0v18h18z'/%3e%3cpath fill='%2343B581' d='M0 8h14.2l-3.6-3.6L12 3l6 6-6 6-1.4-1.4 3.6-3.6H0'/%3e%3c/g%3e%3c/svg%3e");
 `
 
-export const JoinMember = styled('a')`
+export const JoinMember = styled.a`
   cursor: pointer;
   &:hover {
     text-decoration: underline;
   }
 `
 
-export const Root = styled('div')`
+export const Root = styled.div`
   color: ${({ theme }) => theme.colors._primary.fadeOut(0.3).toString()};
   opacity: ${({ theme }) => (theme.message.type === 'SENDING' ? 0.5 : 1)};
 
@@ -110,19 +111,19 @@ export const Root = styled('div')`
   }
 `
 
-export const Reactions = styled('div')``
+export const Reactions = styled.div``
 
-export const Content = styled('div')`
+export const Content = styled.div`
   margin-bottom: 7px;
 `
 
 export namespace Sys {
-  export const Container = styled('div')`
+  export const Container = styled.div`
     height: 1px;
     margin: 12px 0;
   `
 
-  export const Lines = styled('div')`
+  export const Lines = styled.div`
     width: calc(100% - 50px);
     height: 16px;
     position: absolute;
@@ -138,7 +139,7 @@ export namespace Sys {
     }
   `
 
-  export const Message = styled('span')`
+  export const Message = styled.span`
     display: inline-block;
     color: rgba(240, 71, 71, 0.8);
     line-height: 16px;

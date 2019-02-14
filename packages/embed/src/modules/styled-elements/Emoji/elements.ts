@@ -1,4 +1,5 @@
-import styled, { css } from 'typed-emotion'
+import { css } from 'emotion'
+import styled from 'typed-emotion'
 
 export const Base = css`
   width: 1em;
@@ -7,6 +8,6 @@ export const Base = css`
   vertical-align: -0.1em;
 `
 
-export const Emote = styled('img')`
+export const Emote = styled.img`
   ${Base};
 `

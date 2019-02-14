@@ -72,7 +72,7 @@ class EmojiSuggestions extends React.Component<Props> {
           <Suggestion
             key={handler.toString(suggestion)}
             selected={index === selected}
-            innerRef={index === selected ? this.focus.bind(this) : null}
+            ref={index === selected ? this.focus.bind(this) : null}
             onClick={() => this.props.onSelect(suggestion)}
             onMouseOver={() => {
               this.setState({ selected: index })

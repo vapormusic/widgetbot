@@ -27,7 +27,7 @@ class Channel extends React.PureComponent<Props> {
     return (
       <Root {...this.props} className="channel">
         <Hashtag className="hash" />
-        <Name innerRef={ref => (this.name = ref)} className="name">
+        <Name ref={ref => (this.name = ref)} className="name">
           {name}
         </Name>
         {false && <Pings className="pings">1</Pings>}

@@ -1,5 +1,5 @@
 import ExpandableImage from 'styled-elements/ExpandableImage'
-import styled, { css } from 'typed-emotion'
+import styled from 'typed-emotion'
 import { Scale } from 'styled-elements/ScaledImage'
 
 interface ImageProps {
@@ -7,7 +7,7 @@ interface ImageProps {
   width: number
 }
 
-export const Image = styled<ImageProps, any>(ExpandableImage)`
+export const Image = styled(ExpandableImage)<ImageProps>`
   display: block;
   margin: 10px 0;
   cursor: pointer;

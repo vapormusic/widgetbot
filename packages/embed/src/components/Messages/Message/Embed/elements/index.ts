@@ -1,6 +1,7 @@
-import styled, { css } from '../ThemeContext'
+import { css } from 'emotion'
+import styled from '../ThemeContext'
 
-export const Root = styled('div')`
+export const Root = styled.div`
   position: relative;
   margin-top: 5px;
   max-width: 520px;
@@ -8,7 +9,7 @@ export const Root = styled('div')`
   color: ${({ theme }) => theme.colors._primary.fadeOut(0.3).toString()};
 `
 
-export const Wrapper = styled('div')`
+export const Wrapper = styled.div`
   padding: 8px 10px;
   border-radius: 0 3px 3px 0;
   position: relative;
@@ -20,7 +21,7 @@ export const Wrapper = styled('div')`
   overflow: hidden;
 `
 
-export const Content = styled('div')`
+export const Content = styled.div`
   width: 100%;
   display: flex;
   overflow: hidden;
@@ -41,7 +42,7 @@ export const Content = styled('div')`
   }
 `
 
-export const Title = styled('div')`
+export const Title = styled.div`
   color: hsla(0, 0%, 100%, 1);
   display: inline-block;
   font-weight: 500;

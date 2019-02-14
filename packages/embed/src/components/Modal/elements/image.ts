@@ -1,6 +1,6 @@
 import styled from './ThemeContext'
 
-export const Image = styled('img')`
+export const Image = styled.img`
   background-color: ${({ theme }) => theme.colors.background};
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   border-radius: 3px;
@@ -9,7 +9,7 @@ export const Image = styled('img')`
   user-select: none;
 `
 
-export const OpenImage = styled('a')`
+export const OpenImage = styled.a`
   color: #fff;
   line-height: 30px;
   opacity: 0.5;

@@ -1,5 +1,6 @@
+import { css, keyframes } from 'emotion'
 import Channel, { Hash } from 'styled-elements/channel'
-import styled, { css, keyframes } from 'typed-emotion'
+import styled from 'typed-emotion'
 
 const fade = i => keyframes`
   from {
@@ -18,7 +19,7 @@ interface Props {
   order: number
 }
 
-export const Root = styled<Props, 'div'>(Channel as any)`
+export const Root = styled(Channel)<Props>`
   position: relative;
   text-decoration: none;
   user-select: none;
@@ -83,7 +84,7 @@ export const Hashtag = styled(Hash)`
   margin-right: 7px;
 `
 
-export const Name = styled('div')`
+export const Name = styled.div`
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -92,7 +93,7 @@ export const Name = styled('div')`
   overflow: hidden;
 `
 
-export const Pings = styled('div')`
+export const Pings = styled.div`
   display: inline-block;
   flex-shrink: 0;
   padding: 0 6px;

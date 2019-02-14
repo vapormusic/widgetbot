@@ -9,7 +9,7 @@ export const Card = styled(Content)`
   padding-left: 15px;
 `
 
-export const Root = styled('div')`
+export const Root = styled.div`
   display: flex;
 
   @media (max-width: 550px) {
@@ -18,7 +18,7 @@ export const Root = styled('div')`
   }
 `
 
-export const Mugshot = styled('img')`
+export const Mugshot = styled.img`
   height: 130px;
   width: 130px;
   padding: 10px;
@@ -42,29 +42,24 @@ export const Mugshot = styled('img')`
   }
 `
 
-export const Bio = styled('div')`
+export const Bio = styled.div`
   max-width: 300px;
   white-space: pre-line;
 `
 
-export const Heading = styled('h3')`
+export const Heading = styled.h3`
   margin: 0;
   font-weight: 600;
   margin-bottom: 15px;
 `
 
-export const Description = styled('span')`
+export const Description = styled.span`
   display: block;
   font-size: 14px;
   margin-bottom: 12px;
 `
 
-const ButtonLink = withProps({
-  variant: 'mini',
-  color: 'rgba(255, 255, 255, 0.15)'
-})(Button.withComponent('a') as any)
-
-export const Chip = styled<any, 'a'>(ButtonLink)`
+export const Chip = styled.a`
   display: inline-block;
   text-decoration: none;
   opacity: 0.8;
@@ -75,7 +70,7 @@ export const Chip = styled<any, 'a'>(ButtonLink)`
 interface GraphProps {
   username: string
 }
-export const Graph = styled<GraphProps, 'div'>('div')`
+export const Graph = styled.div<GraphProps>`
   background-image: url(${({ username }) =>
     `"https://ghchart.rshah.org/${username}"`});
 

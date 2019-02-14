@@ -3,11 +3,11 @@ import Down from 'react-icons/lib/fa/angle-down'
 import Right from 'react-icons/lib/fa/angle-right'
 import styled from 'typed-emotion'
 
-export const Root = styled('div')`
+export const Root = styled.div`
   padding-top: 20px;
 `
 
-export const Name = styled('div')`
+export const Name = styled.div`
   height: 20px;
   display: flex;
   color: ${({ theme }) => theme.colors._primary.fadeOut(0.6).toString()};
@@ -22,7 +22,7 @@ export const Name = styled('div')`
   }
 `
 
-export const Text = styled('span')`
+export const Text = styled.span`
   margin: 0;
   font-size: 12px;
   font-weight: 500;

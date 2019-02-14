@@ -1,11 +1,12 @@
-import styled, { css } from 'typed-emotion'
+import { css } from 'emotion'
+import styled from 'typed-emotion'
 
 interface Props {
   open: boolean
 }
 
 // prettier-ignore
-export const Ham = styled<Props, 'button'>('button')`
+export const Ham = styled.button<Props>`
   border: none;
   background: none;
   flex-shrink: 0;
@@ -65,7 +66,7 @@ export const Ham = styled<Props, 'button'>('button')`
   }
 `
 
-export const Burger = styled('div')`
+export const Burger = styled.div`
   &,
   &::before,
   &::after {

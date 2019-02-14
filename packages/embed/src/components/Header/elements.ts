@@ -2,7 +2,7 @@ import Button from 'styled-elements/button'
 import { Hash } from 'styled-elements/channel'
 import styled from 'typed-emotion'
 
-export const Root = styled('header')`
+export const Root = styled.header`
   overflow: hidden;
   display: flex;
   flex-shrink: 0;
@@ -21,7 +21,7 @@ export const Root = styled('header')`
   }
 `
 
-export const Stretch = styled('div')`
+export const Stretch = styled.div`
   display: flex;
   flex-grow: 1;
   overflow: hidden;
@@ -54,7 +54,7 @@ export const Name = styled(Hash)`
   }
 `
 
-export const Topic = styled('div')`
+export const Topic = styled.div`
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;

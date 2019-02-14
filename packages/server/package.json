@@ -25,7 +25,7 @@
     "@types/memoizee": "~0.4.2",
     "@types/nedb": "~1.8.5",
     "@types/raven": "~2.5.1",
-    "@types/react-notification-system": "~0.2.37",
+    "@types/react-notification-system": "~0.2.39",
     "@types/request": "~2.47.0",
     "@types/socket.io": "~1.4.33",
     "@types/socket.io-client": "~1.4.32",

@@ -1,10 +1,14 @@
 import { Scrollbars } from 'react-custom-scrollbars'
 import styled from 'typed-emotion'
 
+interface Props {
+  className?: string
+}
+
 /**
  * Visible scrollbar
  */
-export const ScrollVisible = styled(Scrollbars)`
+export const ScrollVisible = styled(Scrollbars)<Props>`
   display: flex;
   height: 100%;
   width: 100%;

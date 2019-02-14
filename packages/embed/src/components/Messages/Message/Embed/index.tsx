@@ -153,13 +153,7 @@ const EmbedFields = ({ fields }) => {
     return null
   }
 
-  return (
-    <Fields>
-      {fields.map((f, i) => (
-        <EmbedField key={i} {...f} />
-      ))}
-    </Fields>
-  )
+  return <Fields>{fields.map((f, i) => <EmbedField key={i} {...f} />)}</Fields>
 }
 
 const Embed = ({
@@ -189,7 +183,7 @@ const Embed = ({
       })}
     >
       <Root>
-        <ColorPill color={color} />
+        <ColorPill bgcolor={color} />
         <Wrapper>
           <Content>
             <div>
