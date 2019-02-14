@@ -25,6 +25,7 @@ export async function Login(token: string) {
   // Start toggling playing status
   if (config.discord.statuses && config.discord.statuses.length)
     PlayingStatus.start()
+  else client.user.setPresence({ game: null })
 
   /**
    * Message events
