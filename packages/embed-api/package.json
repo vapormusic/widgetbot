@@ -16,6 +16,7 @@
     "post-robot": "~8.0.28"
   },
   "devDependencies": {
-    "cpy-cli": "~2.0.0"
+    "cpy-cli": "~2.0.0",
+    "typescript": "~3.3.3"
   }
 }
