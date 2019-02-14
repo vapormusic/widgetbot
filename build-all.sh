@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+export YARN_PRODUCTION=false
 
 echo
 echo "↔ Installing dependencies…"
