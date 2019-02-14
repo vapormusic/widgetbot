@@ -9,10 +9,13 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc -w",
-    "build": "tsc && cp src/*.d.ts dist/"
+    "build": "tsc && cpy src/*.d.ts dist/"
   },
   "private": false,
   "dependencies": {
     "post-robot": "~8.0.28"
+  },
+  "devDependencies": {
+    "cpy-cli": "~2.0.0"
   }
 }
