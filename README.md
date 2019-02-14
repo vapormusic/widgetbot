@@ -6,7 +6,7 @@
 
 ## Building Embed & Server
 
-**Before** you are able yo build anything make sure you have yarn installed:
+**Before** you are able to build anything make sure you have `yarn` installed:
 
 ```bash
 npm install -g yarn
@@ -30,12 +30,14 @@ yarn workspace @widgetbot/crate build
 yarn workspace server build
 ```
 
-Running the servers:
+Then run the server:
 
 ```bash
-yarn workspace server start  # starts the server
-yarn workspace embed start   # starts the embed webserver
+yarn workspace server start
 ```
+
+- You can find the embed running at http://localhost:7000/channels/YOUR-SERVER-ID.
+- Invite your Bot to your Discord server using http://localhost:7000/api/invite.
 
 ## Packages
 
