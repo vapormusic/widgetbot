@@ -131,7 +131,6 @@ export const channel = gql`
         topic
         ${messages}
       }
-      ${theme}
     }
   }
 `

@@ -6,6 +6,7 @@ import About from './About'
 import Authenticate from './Authenticate'
 import { Sam, Voakie } from './Developer'
 import { Box, Close, Image, OpenImage, Root } from './elements'
+import { OpenVideo, Video } from './elements/video'
 
 export default connect()
   .with(({ state, signals, props }) => ({
@@ -53,6 +54,21 @@ export default connect()
                 >
                   Open original
                 </OpenImage>
+              </React.Fragment>
+            )
+          }
+
+          if (modal.type === 'video') {
+            return (
+              <React.Fragment>
+                <Video autoPlay loop muted src={modal.data} />
+                <OpenVideo
+                  href={modal.data}
+                  target="_blank"
+                  onClick={this.close.bind(this)}
+                >
+                  Open original
+                </OpenVideo>
               </React.Fragment>
             )
           }

@@ -64,24 +64,7 @@ class Message extends React.PureComponent<Props, any> {
           {messages.map((message, i) => (
             <ThemeProvider key={message.id} theme={this.theme(message)}>
               <Root className="message">
-                <Content className="content">
-                  {parseText(message.content)}
-                  {message.editedAt && (
-                    <Edited className="edited">{`(edited)`}</Edited>
-                  )}
-                </Content>
-
-                {message.attachment && (
-                  <Image
-                    src={message.attachment.url}
-                    height={+message.attachment.height}
-                    width={+message.attachment.width}
-                  />
-                )}
-
-                {message.embeds.map((embed, i) => (
-                  <Embed key={i} {...embed} />
-                ))}
+                <Content className="content">{parseText(message)}</Content>
 
                 {message.reactions && (
                   <Reactions className="reactions">

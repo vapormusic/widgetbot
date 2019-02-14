@@ -1,23 +1,27 @@
+import * as _ from 'lodash'
 import text from 'markdown/render/ast/text'
 import SimpleMarkdown from 'simple-markdown'
 
 import { animatedEmoji, customEmoji, emoji } from './emotes'
 
 const baseRules = {
-  newline: SimpleMarkdown.defaultRules.newline,
-  paragraph: SimpleMarkdown.defaultRules.paragraph,
-  escape: SimpleMarkdown.defaultRules.escape,
-  link: SimpleMarkdown.defaultRules.link,
+  ..._.pick(SimpleMarkdown.defaultRules, [
+    'newline',
+    'paragraph',
+    'escape',
+    'link',
+    'url',
+    'strong',
+    'em',
+    'u',
+    'br',
+    'inlineCode'
+  ]),
+
   autolink: {
     ...SimpleMarkdown.defaultRules.autolink,
     match: SimpleMarkdown.inlineRegex(/^<(https?:\/\/[^ >]+)>/)
   },
-  url: SimpleMarkdown.defaultRules.url,
-  strong: SimpleMarkdown.defaultRules.strong,
-  em: SimpleMarkdown.defaultRules.em,
-  u: SimpleMarkdown.defaultRules.u,
-  br: SimpleMarkdown.defaultRules.br,
-  inlineCode: SimpleMarkdown.defaultRules.inlineCode,
   emoticon: {
     order: SimpleMarkdown.defaultRules.text.order,
     match: source => /^(¯\\_\(ツ\)_\/¯)/.exec(source),
@@ -35,6 +39,7 @@ const baseRules = {
   customEmoji,
   animatedEmoji,
   text,
+
   s: {
     order: SimpleMarkdown.defaultRules.u.order,
     match: SimpleMarkdown.inlineRegex(/^~~([\s\S]+?)~~(?!_)/),

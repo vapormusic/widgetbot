@@ -27,8 +27,19 @@ export const Icon = styled(Twemoji)`
   width: 16px;
   height: 16px;
   text-align: center;
+  flex-shrink: 0;
 `
 
 export const Name = styled.div`
   margin-left: 10px;
+  flex-grow: 1;
+  flex-shrink: 0;
+`
+
+export const Info = styled('div')`
+  overflow: hidden;
+  margin-left: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: ${({ theme }) => theme.colors._primary.fadeOut(0.75).toString()};
 `
