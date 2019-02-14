@@ -6,13 +6,19 @@
 
 ## Building Embed & Server
 
-If you're a macOS or Linux user you can build all packages at once like this:
+**Before** you are able yo build anything make sure you have yarn installed:
+
+```bash
+npm install -g yarn
+```
+
+If you're a **macOS or Linux** user, of if you're on **Windows with the Git shell** installed, you can build all packages at once like this:
 
 ```bash
 yarn build
 ```
 
-If you want to build them manually or use Windows:
+If you want to build them manually or use **Windows without Git shell**:
 
 ```bash
 yarn
