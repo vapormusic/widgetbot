@@ -2,7 +2,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-> Discord chat widgets for your website
+WidgetBot is a pixel-perfect open-source Discord chat widget for your website. It is distributed and developed under the [GNU General Public License v3 (GPL-3) Open Source License](<https://tldrlegal.com/license/gnu-general-public-license-v3-(gpl-3)>).
 
 [![Banner](./.github/banner.png)](https://widgetbot.io)
 
