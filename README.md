@@ -6,6 +6,13 @@ WidgetBot is a pixel-perfect open-source Discord chat widget for your website. I
 
 [![Banner](./.github/banner.png)](https://widgetbot.io)
 
+## Development
+
+The official Widgetbot team uses [Visual Studio Code](https://code.visualstudio.com) for developing Widgetbot.  
+This fork uses the [IntelliJ IDEA Ultimate](https://www.jetbrains.com/idea/) which is the paid version. The free one, Community Edition, doesn't support web development.
+
+You can use either, or something else.
+
 ## Building Embed & Server
 
 **Before** you are able to build anything make sure you have `yarn` installed:
