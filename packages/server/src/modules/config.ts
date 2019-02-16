@@ -24,15 +24,15 @@ function readConfigurationEnvironment(): object {
     },
     development: env.NODE_ENV && env.NODE_ENV === 'development',
     discord: {
+      events: {
+        logs: [env.LOG_SERVER_ID, env.LOG_CHANNEL_ID],
+        status: [env.LOG_SERVER_ID, env.LOG_CHANNEL_ID]
+      },
+      admins:
+        (env.ADMIN_ID && [env.ADMIN_ID]) ||
+        (env.ADMIN_IDS && env.ADMIN_IDS.split(',')),
       token: env.DISCORD_TOKEN
     },
-    events: {
-      logs: [env.LOG_SERVER_ID, env.LOG_CHANNEL_ID],
-      status: [env.LOG_SERVER_ID, env.LOG_CHANNEL_ID]
-    },
-    admins:
-      (env.ADMIN_ID && [env.ADMIN_ID]) ||
-      (env.ADMIN_IDS && env.ADMIN_IDS.split(',')),
     express: {
       port: env.PORT
     }
