@@ -5,3 +5,5 @@ os:
   - windows
   - linux
   - osx
+env:
+  - YARN_GPG=no # https://travis-ci.community/t/build-doesnt-finish-after-completing-tests/288/13
