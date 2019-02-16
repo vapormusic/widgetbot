@@ -25,3 +25,6 @@ discord:
   admins:  # TODO add your admins and remove entries you don't use
     - 'admin-id-1'
     - 'admin-id-2'
+
+express:
+  port: 7000
