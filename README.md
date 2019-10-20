@@ -24,7 +24,7 @@ You can use either, or something else.
 npm install -g yarn
 ```
 
-If you're a **macOS or Linux** user, of if you're on **Windows with the Git shell** installed, you can build all packages at once like this:
+If you're a **macOS or Linux** user, or if you're on **Windows with the Git shell** installed, you can build all packages at once like this:
 
 ```bash
 yarn build
