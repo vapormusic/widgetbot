@@ -1,6 +1,15 @@
-FROM node:lts-alpine
+ARG APP_DIR=/app
+ARG NODE_VERSION=lts-alpine
 
-ENV APP_DIR /app
+FROM node:${NODE_VERSION} AS package
+
+RUN apk --update \
+	add --no-cache \
+	build-base \
+	python
+
+ARG APP_DIR
+ENV APP_DIR=${APP_DIR}
 
 RUN mkdir -p $APP_DIR
 WORKDIR $APP_DIR
@@ -17,7 +26,7 @@ ADD packages/server/package.json $APP_DIR/packages/server/
 ADD package.json $APP_DIR/
 ADD yarn.lock $APP_DIR/
 
-RUN yarn
+RUN yarn --frozen-lockfile
 
 ADD . $APP_DIR/
 RUN yarn workspace @widgetbot/embed-api build \
@@ -25,6 +34,17 @@ RUN yarn workspace @widgetbot/embed-api build \
       && yarn workspace @widgetbot/html-embed build \
       && yarn workspace embed build \
       && yarn workspace @widgetbot/crate build \
-      && yarn workspace server build
+      && yarn workspace server build \
+      && rm -rf node_modules
+
+FROM node:${NODE_VERSION}
+
+ARG APP_DIR
+ENV APP_DIR=${APP_DIR}
+WORKDIR $APP_DIR
+
+COPY --from=package $APP_DIR $APP_DIR
+
+RUN yarn --production --frozen-lockfile
 
 CMD ["yarn", "workspace", "server", "start"]
