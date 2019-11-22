@@ -2,6 +2,7 @@ version: '3'
 services:
   server:
     build: .
+    restart: unless-stopped
     volumes:
       - ./packages/server/data/config.yml:/app/packages/server/data/config.yml
     ports:
