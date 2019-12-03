@@ -6,10 +6,10 @@
 # COPY THIS FILE BEFORE EDITING TO `config.yml`
 
 database:
-  jwt_secret: ''  # TODO add long random string here for some encryption (DON'T share that string with anyone and don't add it to Git)
+  jwt_secret: ''  # REQUIRED add long random string here for some encryption (DON'T share that string with anyone and don't add it to Git)
 
 discord:
-  token: ''  # TODO add your Discord Bot's Token here
+  token: ''  # REQUIRED add your Discord Bot's Token here
 
   events:
     logs:   ['server-id', 'channel-id']  # TODO decide where to send server activity messages to (currently only guild create/delete)
